@@ -1,0 +1,63 @@
+---
+version: "3.9"
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PYTHON_TAG: "${PYTHON_TAG:-3.11-alpine}"
+    image: "petbuddy_app:${APP_TAG:-latest}"
+    container_name: "petbuddy_app"
+    hostname: "app"
+    restart: "unless-stopped"
+    volumes:
+      - "${PWD}/.env:/config/.env"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - "database_network"
+    ports:
+      - "${WSGI_PORT:-5000}:5000"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5000/health"]
+      interval: 5s
+      timeout: 10s
+      retries: 20
+
+  db:
+    hostname: "${DB_HOSTNAME:?err}"
+    container_name: "petbuddy_db"
+    image: "postgres:${POSTGRES_TAG:-15-alpine}"
+    volumes:
+        - "petbuddy_db_data:/var/lib/postgresql/data"
+#    ports:
+#        - "5432:${DATABASE_PORT:-5432}"
+    networks:
+      - "database_network"
+    restart: "unless-stopped"
+    environment:
+        - "POSTGRES_DB=${POSTGRES_DB:?err}"
+        - "POSTGRES_USER=${POSTGRES_USER:?err}"
+        - "POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?err}"
+        - "TZ=${TZ:-Etc/UTC}"
+        - "PGTZ=${TZ:-Etc/UTC}"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  database_network:
+    driver: bridge
+    external: false
+    name: database_network
+
+volumes:
+  petbuddy_db_data:
+    external: false
+    name: petbuddy_db_data

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <h3>PetBuddy</h3>
+      <hr/>
+
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Pet name</label><br>
+         <input type = "text" name = "name" placeholder = "Pet name" /><br>
+         <label for = "email">Animal</label><br>
+         <input type = "text" name = "animal" placeholder = "Animal" /><br>
+         <label for = "addr">Breed</label><br>
+         <textarea name = "breed" placeholder = "Breed"></textarea><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+   </body>
+</html>
