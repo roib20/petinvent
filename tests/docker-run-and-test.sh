@@ -63,20 +63,20 @@ docker compose --file "./docker-compose.yml" --env-file "./.env" up -d --build \
 || docker-compose --file "./docker-compose.yml" --env-file "./.env" up -d --build \
 || echo "docker-compose-plugin not installed" | exit 1
 
-# test application health
-printf "\n"
-echo "Checking server status... Please wait"
-server_up=false
-while [ ${server_up} = false ]
-do
-sleep 1s
-connect=$( (curl --silent --location --request GET "http://localhost:5000/health") )
-if [ -n "${connect}" ]; then
-    server_up=true
-fi
-done
-printf "\n"
-echo "PetBuddy is up and available at http://localhost:5000"
+## test application health
+#printf "\n"
+#echo "Checking server status... Please wait"
+#server_up=false
+#while [ ${server_up} = false ]
+#do
+#sleep 1s
+#connect=$( (curl --silent --location --request GET "http://localhost:5000/health") )
+#if [ -n "${connect}" ]; then
+#    server_up=true
+#fi
+#done
+#printf "\n"
+#echo "PetBuddy is up and available at http://localhost:5000"
 
 # run end-to-end tests
 /usr/bin/env bash ./tests/e2e-tests.sh
