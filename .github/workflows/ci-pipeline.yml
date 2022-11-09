@@ -7,6 +7,11 @@ on:
     tags: ['v*.*.*']
   pull_request:
     branches: ['main', 'feature/**']
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        description: Git Ref (Optional)
+        required: false
 
 env:
   # Use docker.io for Docker Hub if empty
