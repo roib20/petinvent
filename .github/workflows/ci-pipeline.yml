@@ -99,7 +99,7 @@ jobs:
         context: .
         file: ./Dockerfile
         build-args: |
-          PYTHON_TAG=python:3.11-alpine
+          PYTHON_TAG=3.11-alpine
         platforms: linux/amd64
         pull: false
         push: ${{ github.event_name != 'pull_request' }}
