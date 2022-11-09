@@ -97,7 +97,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: .
-        Dockerfile: ./Dockerfile
+        file: ./Dockerfile
         build-args: |
           PYTHON_TAG=python:3.11-alpine
         platforms: linux/amd64

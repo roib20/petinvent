@@ -7,6 +7,8 @@ TESTING_PORT="5000"
 #Health check
 #--------------------------------------------------------------
 
+sleep 30s
+
 echo "--Health check--"
 connect=$(curl --silent --location --request GET "${IP}:${TESTING_PORT}"'/health' | cut -f5 -d " " )
 if [ "${connect}" = "200" ]
