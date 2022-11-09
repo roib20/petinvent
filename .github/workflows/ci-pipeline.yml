@@ -19,7 +19,7 @@ jobs:
 
   test:
 
-    runs-on: self-hosted # self-hosted ubuntu-22.04 VM (running on Proxmox VE)
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
@@ -35,7 +35,7 @@ jobs:
   push:
     needs: test
 
-    runs-on: self-hosted # self-hosted ubuntu-22.04 VM (running on Proxmox VE)
+    runs-on: ubuntu-22.04
     permissions:
       contents: read
       packages: write
