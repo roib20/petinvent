@@ -19,7 +19,7 @@ try:
 except KeyError:
     raise ValueError("No database config set for Flask application")
 try:
-    SECRET_KEY = str(environ["SECRET_KEY"])
+    SECRET_KEY = str(environ["FLASK_SECRET_KEY"])
 except KeyError:
     raise ValueError("No SECRET_KEY set for Flask application")
 
