@@ -19,7 +19,7 @@ try:
 except KeyError:
     raise ValueError("No database config set for Flask application")
 try:
-    SECRET_KEY = str(environ["FLASK_SECRET_KEY"])
+    SECRET_KEY = str(environ["SECRET_KEY"])
 except KeyError:
     raise ValueError("No SECRET_KEY set for Flask application")
 
@@ -30,7 +30,7 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://" + POSTGRES_USER + ":" + POSTGRES_PASSWORD + "@" \
                               + DB_HOSTNAME + ":" + POSTGRES_PORT + "/" + POSTGRES_DB
 
-    SECRET_KEY = str(environ["FLASK_SECRET_KEY"])
+    SECRET_KEY = str(environ["SECRET_KEY"])
     DEBUG = False
     TESTING = False
     SESSION_COOKIE_SECURE = True
