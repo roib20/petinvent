@@ -25,7 +25,7 @@ APP_TAG="test-${PYTHON_TAG}"
 
 # Generate random passwords
 PASSGEN="head /dev/urandom | tr -dc A-Za-z0-9 | head -c64"
-FLASK_SECRET_KEY=$( eval "$PASSGEN" )
+SECRET_KEY=$( eval "$PASSGEN" )
 POSTGRES_PASSWORD=$( eval "$PASSGEN" )
 
 POSTGRES_USER=user
@@ -51,7 +51,7 @@ POSTGRES_PORT=${POSTGRES_PORT}
 
 # Flask configuration
 SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DB_HOSTNAME}:${POSTGRES_PORT}/${POSTGRES_DB}
-FLASK_SECRET_KEY=${SECRET_KEY}
+SECRET_KEY=${SECRET_KEY}
 EOF
 
 # convert .env file to UTF-8 with BOM encoding
