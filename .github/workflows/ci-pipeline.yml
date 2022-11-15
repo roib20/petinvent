@@ -37,7 +37,7 @@ jobs:
       run: /bin/bash -v ./tests/docker-run-and-test.sh ${{ matrix.python }} ${{ matrix.postgres }}
 
 
-  push:
+  publish:
     needs: test
 
     runs-on: ubuntu-22.04
@@ -131,7 +131,7 @@ jobs:
 
 
   clean:
-    needs: [test, push]
+    needs: [test, publish]
 
     runs-on: self-hosted # self-hosted ubuntu-22.04 VM (running on Proxmox VE)
 
