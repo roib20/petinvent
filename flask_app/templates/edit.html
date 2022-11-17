@@ -10,16 +10,16 @@
     </div>
     {%- endfor %}
     <form action="{{ request.path }}" method="post">
-       Pet name: <input type="text" style="margin: 4px;" name="name" placeholder="{{ pet.name }}" /><br>
+       Pet name: <input type="text" style="margin: 4px;" name="name" placeholder="Pet name" value="{{ pet.name }}" /><br>
        <br>
        Animal: <select name="animal" id="animal" style="margin: 4px;">
-          <option value="" selected="selected">Select animal</option>
+          <option value="{{ pet.animal }}" selected="selected">Select animal</option>
        </select>
        Breed: <select name="breed" id="breed" style="margin: 4px;">
-          <option value="" selected="selected">Please select animal first</option>
+          <option value="{{ pet.breed }}" selected="selected">Please select animal first</option>
        </select>
        <br></br>
-       Birthday: <input type="date" style="margin: 4px;" name="birthday" placeholder="{{ pet.birthday }}" /><br>
+       Birthday: <input type="date" style="margin: 4px;" name="birthday" placeholder="Birthday" value="{{ pet.birthday }}" /><br>
        <hr>
        <a type="button" class="btn btn-danger" href="{{ url_for('index') }}">Cancel</a>
        <button type="submit" class="btn btn-success">Update</button>
