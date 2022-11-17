@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-body">
+    <h4>Add new pet</h4>
+    <hr>
+
+    {%- for category, message in get_flashed_messages(with_categories = true) %}
+    <div class="alert alert-danger">
+       {{ message }}
+    </div>
+    {%- endfor %}
+    <form action="{{ request.path }}" method="post">
+       Pet name: <input type="text" style="margin: 4px;" name="name" placeholder="Pet name" /><br>
+       <br>
+       Animal: <select name="animal" id="animal" style="margin: 4px;">
+          <option value="" selected="selected">Select animal</option>
+       </select>
+       Breed: <select name="breed" id="breed" style="margin: 4px;">
+          <option value="" selected="selected">Please select animal first</option>
+       </select>
+       <br></br>
+       Birthday: <input type="date" style="margin: 4px;" name="birthday" placeholder="Birthday"/><br>
+       <hr>
+       <a type="button" class="btn btn-danger" href="{{ url_for('index') }}">Cancel</a>
+       <button type="submit" class="btn btn-success">Add</button>
+       </form>
+</div>
+{% endblock %}

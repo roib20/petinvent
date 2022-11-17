@@ -19,35 +19,73 @@ class Pet(db.Model):
     name = db.Column(db.String())
     animal = db.Column(db.String())
     breed = db.Column(db.String())
+    birthday = db.Column(db.String())
 
 
-def __init__(self, name, animal, breed):
+def __init__(self, name, animal, breed, birthday):
     self.name = name
     self.animal = animal
     self.breed = breed
+    self.birthday = birthday
 
 
 @app.route('/')
-def show_all():
+def index():
     db.create_all()
-    return render_template('show_all.html', pets=Pet.query.all())
+    return render_template('index.html', pets=Pet.query.all())
 
-
-@app.route('/new', methods=['GET', 'POST'])
-def new():
+@app.route('/add/', methods=['GET', 'POST'])
+def add():
     db.create_all()
     if request.method == 'POST':
-        if not request.form['name'] or not request.form['animal'] or not request.form['breed']:
+        if not request.form['name'] or not request.form['animal'] or not request.form['breed'] \
+        or not request.form['birthday']:
             flash('Please enter all the fields', 'error')
         else:
             pet = Pet(name=request.form['name'], animal=request.form['animal'],
-                      breed=request.form['breed'])
+                      breed=request.form['breed'], birthday=request.form['birthday'])
 
             db.session.add(pet)
             db.session.commit()
             flash('Record was successfully added')
-            return redirect(url_for('show_all'))
-    return render_template('new.html')
+            return redirect(url_for('index'))
+    return render_template('add.html')
+
+@app.route('/<int:pet_id>/edit/', methods=('GET', 'POST'))
+def edit(pet_id):
+    db.create_all()
+    pet = Pet.query.get_or_404(pet_id)
+
+    if request.method == 'POST':
+
+        if not request.form['name'] or not request.form['animal'] or not request.form['breed'] \
+        or not request.form['birthday']:
+            flash('Please enter all the fields', 'error')
+        else:
+            name=request.form['name']
+            animal=request.form['animal']
+            breed=request.form['breed']
+            birthday=request.form['birthday']
+
+            pet.name = name
+            pet.animal = animal
+            pet.breed = breed
+            pet.birthday = birthday
+
+            db.session.add(pet)
+            db.session.commit()
+
+            return redirect(url_for('index'))
+
+    return render_template('edit.html', pet=pet)
+
+@app.post('/<int:pet_id>/delete/')
+def delete(pet_id):
+    db.create_all()
+    pet = Pet.query.get_or_404(pet_id)
+    db.session.delete(pet)
+    db.session.commit()
+    return redirect(url_for('index'))
 
 
 @app.route('/test_db')
@@ -56,11 +94,11 @@ def test_db():
     # db.session.commit()
     pet = Pet.query.first()
     if not pet:
-        u = Pet(name='Charlie', animal='Dog', breed='Lab')
+        u = Pet(name='Charlie', animal='Dog', breed='Labrador Retriever', birthday="22/03/2019")
         db.session.add(u)
         db.session.commit()
     pet = Pet.query.first()
-    return "Pet '{} {} {}' is in database".format(pet.name, pet.animal, pet.breed)
+    return "Pet '{}' is in the database".format(pet.name, pet.animal, pet.breed, pet.birthday)
 
 
 # For debugging only
