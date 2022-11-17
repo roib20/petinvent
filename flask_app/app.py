@@ -47,7 +47,8 @@ def add():
 
             db.session.add(pet)
             db.session.commit()
-            flash('Record was successfully added')
+ 
+            # flash('Record was successfully added')
             return redirect(url_for('index'))
     return render_template('add.html')
 
@@ -75,6 +76,7 @@ def edit(pet_id):
             db.session.add(pet)
             db.session.commit()
 
+            # flash('Record was successfully updated')
             return redirect(url_for('index'))
 
     return render_template('edit.html', pet=pet)
