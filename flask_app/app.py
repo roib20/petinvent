@@ -94,7 +94,7 @@ def test_db():
     # db.session.commit()
     pet = Pet.query.first()
     if not pet:
-        u = Pet(name='Charlie', animal='Dog', breed='Labrador Retriever', birthday="22/03/2019")
+        u = Pet(name='Charlie', animal='Dog', breed='Labrador Retriever', birthday="2018-03-13")
         db.session.add(u)
         db.session.commit()
     pet = Pet.query.first()
