@@ -103,6 +103,11 @@ def test_db():
     return "Pet '{}' is in the database".format(pet.name, pet.animal, pet.breed, pet.birthday)
 
 
+@app.route('/unsplash')
+def unsplash():
+    return render_template('unsplash.html')
+
+
 # For debugging only
 if __name__ == '__main__':
     app.run(host="localhost", port=5000, debug=True)
