@@ -12,24 +12,24 @@
    <form action="{{ request.path }}" method="post">
 
       <label for="name" style="font-weight: bold;">Pet name:</label>
-      <input type="text" id="name" class="form-control form-control-inline" name="name" placeholder=""
+      <input type="text" id="name" class="form-control form-control-custom" name="name" placeholder=""
          value="{{ pet.name }}" /><br>
       <br>
 
       <label for="animal" style="font-weight: bold;">Animal:</label>
-      <select name="animal" id="animal" class="custom-select form-control-inline">
+      <select name="animal" id="animal" class="custom-select form-control-custom">
          <option value="{{ pet.animal }}" selected="selected">Select animal</option>
       </select>
       <br></br>
 
       <label for="breed" style="font-weight: bold;">Breed:</label>
-      <select name="breed" id="breed" class="custom-select form-control-inline">
+      <select name="breed" id="breed" class="custom-select form-control-custom">
          <option value="{{ pet.breed }}" selected="selected">Please select animal first</option>
       </select>
       <br></br>
 
       <label for="birthday" style="font-weight: bold;">Birthday:</label>
-      <input type="date" name="birthday" id="birthday" class="form-control form-control-inline" style="width: auto;"
+      <input type="date" name="birthday" id="birthday" class="form-control form-control-custom" style="width: auto;"
          value="{{ pet.birthday }}" /><br>
       <hr>
       <a type="button" class="btn btn-danger" href="{{ url_for('index') }}">Cancel</a>
