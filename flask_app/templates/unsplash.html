@@ -1,8 +1,15 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PetBuddy</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="">
     <meta property="og:type" content="">
@@ -20,7 +27,12 @@
     <meta name="theme-color" content="#fafafa">
 
     <title>{% block title %}{% endblock %}</title>
+</head>
 
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
     <style>
         body {
             background-image: url("https://source.unsplash.com/collection/1040/1920x1080");
@@ -32,6 +44,8 @@
             -o-background-size: cover;
             background-size: cover;
             white-space: normal;
+            width: auto;
+            height: auto;
         }
     </style>
-</head>
+</body>
