@@ -27,7 +27,8 @@
                         <a type="button" style="margin: 2px;" class="btn btn-warning btn-md text-black"
                             href="{{ url_for('edit', pet_id=pet.id) }}">Edit</a>
                         <form class="form" method="POST" action="{{ url_for('delete', pet_id=pet.id) }}">
-                            <input type="submit" value="Delete" style="margin: 2px;" class="btn btn-danger btn-md text-black"
+                            <input type="submit" value="Delete" style="margin: 2px;"
+                                class="btn btn-danger btn-md text-black"
                                 onclick="return confirm('Are you sure you want to delete this entry?')">
                         </form>
                     </div>
