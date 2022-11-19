@@ -24,10 +24,10 @@
                 </div>
                 <td>
                     <div class="btn-group" role="group">
-                        <a type="button" style="margin: 2px;" class="btn btn-warning"
+                        <a type="button" style="margin: 2px;" class="btn btn-warning btn-md"
                             href="{{ url_for('edit', pet_id=pet.id) }}">Edit</a>
                         <form class="form" method="POST" action="{{ url_for('delete', pet_id=pet.id) }}">
-                            <input type="submit" value="Delete" style="margin: 2px;" class="btn btn-danger"
+                            <input type="submit" value="Delete" style="margin: 2px;" class="btn btn-danger btn-md"
                                 onclick="return confirm('Are you sure you want to delete this entry?')">
                         </form>
                     </div>
