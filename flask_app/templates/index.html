@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="card-body">
-    <h4 style="font-weight: bolder">Pet List</h4>
+    <h4 style="font-weight: bolder; font-size: 200%;">Pet List</h4>
     <br>
-    <table class="table">
+    <table class="table" style="font-size: 150%;">
         <thead>
             <tr>
                 <th scope="col">Pet name</th>
@@ -16,10 +16,12 @@
         <tbody>
             {% for pet in pets %}
             <tr>
-                <td>{{ pet.name }}</td>
-                <td>{{ pet.animal }}</td>
-                <td>{{ pet.breed }}</td>
-                <td>{{ pet.birthday }}</td>
+                <div>
+                    <td>{{ pet.name }}</td>
+                    <td>{{ pet.animal }}</td>
+                    <td>{{ pet.breed }}</td>
+                    <td>{{ pet.birthday }}</td>
+                </div>
                 <td>
                     <div class="btn-group" role="group">
                         <a type="button" style="margin: 2px;" class="btn btn-warning"

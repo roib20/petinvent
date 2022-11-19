@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="card-body">
-   <h4 style="font-weight: bolder">Add new pet</h4>
+   <h4 style="font-weight: bolder; font-size: 200%;">Add new pet</h4>
    <hr>
 
    {%- for category, message in get_flashed_messages(with_categories = true) %}
@@ -12,7 +12,7 @@
    <form action="{{ request.path }}" method="post">
 
       <label for="name" style="font-weight: bold;">Pet name:</label>
-      <input type="text" id="name" class="form-control form-control-inline" name="name" placeholder="Pet name"
+      <input type="text" id="name" class="form-control form-control-inline" name="name" placeholder=""
          value="" /><br>
       <br>
 
