@@ -27,8 +27,18 @@ except KeyError:
 class Config(object):
     # Connect String:
     # postgresql+psycopg2://user:password@host:port/dbname[?key=value&key=value...]
-    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://" + POSTGRES_USER + ":" + POSTGRES_PASSWORD + "@" \
-                              + DB_HOSTNAME + ":" + POSTGRES_PORT + "/" + POSTGRES_DB
+    SQLALCHEMY_DATABASE_URI = (
+        "postgresql+psycopg2://"
+        + POSTGRES_USER
+        + ":"
+        + POSTGRES_PASSWORD
+        + "@"
+        + DB_HOSTNAME
+        + ":"
+        + POSTGRES_PORT
+        + "/"
+        + POSTGRES_DB
+    )
 
     SECRET_KEY = str(environ["SECRET_KEY"])
     DEBUG = False
