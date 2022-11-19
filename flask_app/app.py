@@ -13,7 +13,7 @@ from flask_migrate import Migrate
 
 
 app = Flask(__name__, template_folder="templates")
-app.config.from_object("config.Config")
+app.config.from_object("config-testing.Config")
 app.register_blueprint(view, url_prefix="/")
 
 db = SQLAlchemy(app)
