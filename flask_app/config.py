@@ -2,6 +2,7 @@ from os import environ
 from dotenv import load_dotenv
 from dotenv import dotenv_values
 from pathlib import Path
+from urllib.parse import quote
 
 # env_filepath = Path.cwd().parent.joinpath(".env")
 env_filepath = Path("/config/.env")
@@ -12,7 +13,7 @@ if env_filepath.is_file():
 
 try:
     POSTGRES_USER = str(environ["POSTGRES_USER"])
-    POSTGRES_PASSWORD = str(environ["POSTGRES_PASSWORD"])
+    POSTGRES_PASSWORD = str(quote(environ["POSTGRES_PASSWORD"]))
     DB_HOSTNAME = str(environ["DB_HOSTNAME"])
     POSTGRES_DB = str(environ["POSTGRES_DB"])
     POSTGRES_PORT = str(environ["POSTGRES_PORT"])
