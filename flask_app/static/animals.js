@@ -102,6 +102,7 @@ export default
         "Turkish Van": [],
         "Ukrainian Levkoy": [],
     },
+
     "Dog": {
         "Affenpinscher": [],
         "Afghan Hound": [],
@@ -556,6 +557,7 @@ export default
         "Wirehaired Pointing Griffon": [],
         "Wirehaired Vizsla": [],
     },
+
     "Fish": {
         "Angelfish": [],
         "Betta Fish": [],
