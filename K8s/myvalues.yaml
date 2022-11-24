@@ -1,0 +1,14 @@
+ingress:
+  enabled: true
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: petbuddy.party
+  hosts:
+  - host: petbuddy.party
+    paths:
+    - path: /
+      pathType: Prefix
+  tls:
+  - cluster-issuer: ca-issuer
+  - secretName: petbuddy-party-tls
+    hosts:
+    - petbuddy.party

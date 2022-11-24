@@ -1,0 +1,4 @@
+provider: cloudflare
+cloudflare:
+  secretName: cloudflare-secret
+  proxied: true

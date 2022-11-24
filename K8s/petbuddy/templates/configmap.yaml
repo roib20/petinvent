@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: {{ include "petbuddy.fullname" . }}
+data:
+    POSTGRES_USER: {{ index .Values "postgresql-ha" "postgresql" "username" | quote }}
+    DB_HOSTNAME: "{{ index .Values "postgresql-ha" "fullnameOverride" }}-{{ .Values.app.dbConfig.databaseHostname }}"
+    POSTGRES_DB: {{ index .Values "postgresql-ha" "postgresql" "database" | quote }}
+    POSTGRES_PORT: {{ index .Values "app" "dbConfig" "postgresPort" | quote }}
