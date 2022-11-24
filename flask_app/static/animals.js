@@ -759,7 +759,6 @@ export default
         "African Egg-Eating Snake": [],
         "Amethystine Python": [],
         "Ball Python": [],
-        "Ball Python": [],
         "Boa Constrictor": [],
         "Burmese Python": [],
         "California King Snake": [],

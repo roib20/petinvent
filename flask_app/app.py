@@ -26,14 +26,14 @@ class Pet(db.Model):
     id = db.Column("pet_id", db.Integer, primary_key=True)
     name = db.Column(db.String())
     animal = db.Column(db.String())
-    breed = db.Column(db.String())
+    species = db.Column(db.String())
     birthday = db.Column(db.String())
 
 
-def __init__(self, name, animal, breed, birthday):
+def __init__(self, name, animal, species, birthday):
     self.name = name
     self.animal = animal
-    self.breed = breed
+    self.species = species
     self.birthday = birthday
 
 
@@ -50,7 +50,7 @@ def add():
         if (
             not request.form["name"]
             or not request.form["animal"]
-            or not request.form["breed"]
+            or not request.form["species"]
             or not request.form["birthday"]
         ):
             flash("Please enter all the fields", "error")
@@ -58,7 +58,7 @@ def add():
             pet = Pet(
                 name=request.form["name"],
                 animal=request.form["animal"],
-                breed=request.form["breed"],
+                species=request.form["species"],
                 birthday=request.form["birthday"],
             )
 
@@ -80,19 +80,19 @@ def edit(pet_id):
         if (
             not request.form["name"]
             or not request.form["animal"]
-            or not request.form["breed"]
+            or not request.form["species"]
             or not request.form["birthday"]
         ):
             flash("Please enter all the fields", "error")
         else:
             name = request.form["name"]
             animal = request.form["animal"]
-            breed = request.form["breed"]
+            breed = request.form["species"]
             birthday = request.form["birthday"]
 
             pet.name = name
             pet.animal = animal
-            pet.breed = breed
+            pet.species = breed
             pet.birthday = birthday
 
             db.session.add(pet)
@@ -129,7 +129,7 @@ def test_db():
         db.session.commit()
     pet = Pet.query.first()
     return "Pet '{}' is in the database".format(
-        pet.name, pet.animal, pet.breed, pet.birthday
+        pet.name, pet.animal, pet.species, pet.birthday
     )
 
 
