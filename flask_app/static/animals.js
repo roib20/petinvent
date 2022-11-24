@@ -1,5 +1,23 @@
 export default
 {
+    "Amphibian": {
+        "Amazon Milk Frog": [],
+        "Australian Green Tree Frog": [],
+        "Axolotl": [],
+        "Budgett's Frog": [],
+        "Dart Frog": [],
+        "Eastern Newt": [],
+        "Fire Belly Newt": [],
+        "Gray Tree Frog": [],
+        "Oriental Fire Belly Toad": [],
+        "Pacman Frog": [],
+        "Pixie Frog": [],
+        "Red-Eyed Tree Frog": [],
+        "Spotted Salamander": [],
+        "Tiger Salamander": [],
+        "Xenopus Clawed Frog": []
+    },
+
     "Bird": {
         "African Grey Parrot": [],
         "Amazon Parrot": [],
