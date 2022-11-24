@@ -1,4 +1,10 @@
-# .env file ignore
+# ignore secret files
+secret.yaml
+mysecret.yaml
+*secret*.yaml
+*secret*.yml 
+
+# ignore .env files
 .env
 *.env
 config.cfg
