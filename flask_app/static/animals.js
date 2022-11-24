@@ -15,7 +15,8 @@ export default
         "Red-Eyed Tree Frog": [],
         "Spotted Salamander": [],
         "Tiger Salamander": [],
-        "Xenopus Clawed Frog": []
+        "Xenopus Clawed Frog": [],
+        "Other": []
     },
 
     "Bird": {
@@ -36,7 +37,7 @@ export default
         "Indian Ringneck": [],
         "Lorikeet": [],
         "Lovebird": [],
-        "Meyer’s Parrot": [],
+        "Meyer's Parrot": [],
         "Military Macaw": [],
         "Mini Macaw": [],
         "Parakeet": [],
@@ -48,6 +49,7 @@ export default
         "Scarlet Macaw": [],
         "Senegal Parrot": [],
         "Sun Conure": [],
+        "Other": []
     },
     
     "Cat": {
@@ -151,6 +153,7 @@ export default
         "Turkish Angora": [],
         "Turkish Van": [],
         "Ukrainian Levkoy": [],
+        "Other": []
     },
 
     "Dog": {
@@ -606,6 +609,7 @@ export default
         "Wire Fox Terrier": [],
         "Wirehaired Pointing Griffon": [],
         "Wirehaired Vizsla": [],
+        "Other": []
     },
 
     "Fish": {
@@ -659,6 +663,7 @@ export default
         "White Cloud Minnow": [],
         "White Skirt Tetra": [],
         "Zebra Danio": [],
+        "Other": []
     },
 
     "Rabbit": {
@@ -701,6 +706,7 @@ export default
         "Silver Fox": [],
         "Silver Marten": [],
         "Tan": [],
+        "Other": []
     },
         
     "Reptile": {
@@ -742,6 +748,7 @@ export default
         "Standing's Day Gecko": [],
         "Tiliqua Scincoides": [],
         "Uromastyx": [],
+        "Other": []
     },
 
     "Rodent": {
@@ -753,6 +760,7 @@ export default
         "Hamster": [],
         "Mice": [],
         "Rat": [],
+        "Other": []
     },
 
     "Snake": {
@@ -780,6 +788,7 @@ export default
         "Rough Green Snake": [],
         "Smooth Green Snake": [],
         "Vipera Kaznakovi": [],
-        "Western Hognose Snake": []
+        "Western Hognose Snake": [],
+        "Other": []
     },
 }
