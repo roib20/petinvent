@@ -26,7 +26,7 @@ kubectl get services --namespace ingress-nginx
 /bin/sh ./secret.sh
 
 kubectl apply -f clusterissuer-staging.yaml
-kubectl apply -f certificate-staging.yaml
+kubectl apply -f clusterissuer-prod.yaml
 
 helm install external-dns bitnami/external-dns \
 --version 6.11.3 \
