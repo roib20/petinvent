@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<script type="module" src="{{url_for('static', filename='base.js')}}">
-
-</script>
+<script type="module" src="{{url_for('static', filename='base.js')}}"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -33,6 +31,8 @@
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="{{url_for('static', filename='background.css')}}">
+
     <!-- padding -->
     <br></br>
     <br></br>
@@ -42,28 +42,6 @@
 <body>
     <div class="card" style="background-color: rgba(245, 245, 245, 0.4);">
         <div class="card-transparent table-responsive text-black" style="display: flex;">
-            <style>
-                body {
-                    background-image: url("https://source.unsplash.com/collection/1040/1920x1080");
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    background-attachment: fixed;
-                    -webkit-background-size: cover;
-                    -moz-background-size: cover;
-                    -o-background-size: cover;
-                    background-size: cover;
-                    white-space: normal;
-                    width: auto;
-                    height: auto;
-                }
-
-                .form-control-custom {
-                    min-width: 0;
-                    width: auto;
-                    display: block;
-                    justify-content: space-between;
-                }
-            </style>
             <div class="card-block" style="flex: 1">
                 {% block content %}
                 {% endblock %}
