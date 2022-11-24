@@ -12,7 +12,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 
-app = Flask(__name__, template_folder="templates")
+app = Flask(__name__, template_folder="src/templates", static_folder="src/static")
 app.config.from_object("config.Config")
 app.register_blueprint(view, url_prefix="/")
 
