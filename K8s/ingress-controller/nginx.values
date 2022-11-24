@@ -1,6 +1,0 @@
-controller:
-    service:
-        annotations:
-            external-dns.alpha.kubernetes.io/hostname: ingress1.petbuddy.party
-            external-dns.alpha.kubernetes.io/ttl: "120" #optional
-            external-dns.alpha.kubernetes.io/access: public

@@ -1,4 +1,4 @@
-# Default values for petbuddy.
+# Default values for petinvent.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   pullPolicy: Always
-  repository: ghcr.io/roib20/petbuddy
+  repository: ghcr.io/roib20/petinvent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 5000
 
 ingress:
   enabled: true
@@ -82,7 +82,7 @@ tolerations: []
 affinity: {}
 
 
-# Values for PetBuddy Flask app
+# Values for petinvent Flask app
 app:
   secret:
     existingSecret: mysecret

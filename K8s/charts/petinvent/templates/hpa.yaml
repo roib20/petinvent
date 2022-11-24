@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "petbuddy.fullname" . }}
+  name: {{ include "petinvent.fullname" . }}
   labels:
-    {{- include "petbuddy.labels" . | nindent 4 }}
+    {{- include "petinvent.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "petbuddy.fullname" . }}
+    name: {{ include "petinvent.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

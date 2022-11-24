@@ -27,8 +27,21 @@ done
 
 SECRET_NAME="cloudflare-secret"
 
+# Install "Sealed Secrets" controller by Bitnami
+# kubectl apply --filename \
+#   https://github.com/bitnami-labs/sealed-secrets/releases/download/"${SEALED_SECRETS_VERSION}"/controller.yaml
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+helm upgrade --install sealed-secrets-controller bitnami/sealed-secrets \
+--namespace default
+
+# sleep "5s"
+
 # Remove previous secret by the same name
 ( kubectl delete sealedsecrets.bitnami.com ${SECRET_NAME} ) > /dev/null 2>&1
+
+CLOUDFLARE_API_TOKEN="5bMCPVBzrT-EjT8fwRPjxzzSow6JD4daElTpPjoi"
 
 kubectl --namespace default \
   create secret \
@@ -45,6 +58,9 @@ kubectl --namespace default \
 kubectl create \
   --filename "${SECRET_NAME}".yaml
 
-rm "${SECRET_NAME}".yaml
+# kubectl get secret ${SECRET_NAME} \
+#     --output yaml
+
+# kubeseal --fetch-cert
 
 exit 0

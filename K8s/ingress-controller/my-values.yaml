@@ -1,5 +1,0 @@
-ingressClassResource:
-  default: true
-
-controller:
-  setAsDefaultIngress: true
