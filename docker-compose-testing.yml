@@ -4,17 +4,17 @@ version: "3.9"
 services:
 
   app:
-    image: "ghcr.io/roib20/petinvent:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PYTHON_TAG: "${PYTHON_TAG:-3.11-alpine}"
+    image: "petinvent_app:${APP_TAG:-latest}"
     container_name: "petinvent_app"
     hostname: "app"
     restart: "unless-stopped"
-    environment:
-        - "POSTGRES_DB=${POSTGRES_DB:?err}"
-        - "POSTGRES_USER=${POSTGRES_USER:?err}"
-        - "POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?err}"
-        - "DB_HOSTNAME=${DB_HOSTNAME:-db}"
-        - "POSTGRES_PORT=${POSTGRES_PORT:-5432}"
-        - "SECRET_KEY=${SECRET_KEY}"
+    env_file:
+      - .env
     depends_on:
       db:
         condition: service_healthy
@@ -34,6 +34,8 @@ services:
     image: "postgres:${POSTGRES_TAG:-15-alpine}"
     volumes:
         - "petinvent_db_data:/var/lib/postgresql/data"
+#    ports:
+#        - "5432:${DATABASE_PORT:-5432}"
     networks:
       - "database_network"
     restart: "unless-stopped"
