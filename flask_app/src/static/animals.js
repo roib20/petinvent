@@ -668,7 +668,7 @@ export default
             "Other": []
         },
 
-        "Horses": {
+        "Horse": {
             "American Albino": [],
             "Abaco Barb": [],
             "Abtenauer": [],
