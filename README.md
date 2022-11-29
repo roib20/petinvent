@@ -24,11 +24,12 @@ Advanced users can deploy manually using Docker and docker compose, or using Kub
 ## Technology Stack
 
 ### Full Stack Web Application
-- **Back-end:**  [Python](https://www.python.org/) with [Flask](https://flask.palletsprojects.com/)  
+- **Back-end Language:**  [Python](https://www.python.org/)  
+- **Back-end Framework:** [Flask](https://flask.palletsprojects.com/)  
+- **Front-end Languages:** [HTML](https://developer.mozilla.org/en/docs/Web/HTML), [CSS](https://developer.mozilla.org/en/docs/Web/CSS) & [JavaScript](https://developer.mozilla.org/en/docs/Web/JavaScript)  
+- **Front-end Framework:** [Bootstrap v5](https://getbootstrap.com/)
 - **Database:** SQL - [PostgreSQL](https://www.postgresql.org/), [MySQL](https://www.mysql.com/), [MariaDB](https://mariadb.org/) or [SQLite](https://www.sqlite.org/)  
-- **Front-end:** [HTML](https://developer.mozilla.org/en/docs/Web/HTML), [CSS](https://developer.mozilla.org/en/docs/Web/CSS) & [JavaScript](https://developer.mozilla.org/en/docs/Web/JavaScript)  
-- **Front-end Framework:** [Bootstrap v5](https://getbootstrap.com/)  
-- **Scripting**: [Bash](https://www.gnu.org/software/bash/) & [POSIX shell](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html)  
+- **Scripting Languages**: [Bash](https://www.gnu.org/software/bash/) & [POSIX Shell Command Language](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html)  
 
 ### Containerization (Docker)
 - **Container Engine:** [Docker](https://www.docker.com) & [containerd](https://containerd.io/) 
