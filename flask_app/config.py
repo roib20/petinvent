@@ -30,6 +30,7 @@ if "POSTGRES_DB" in environ:
     SQLALCHEMY_DATABASE_URI = make_url(
         str(
             "postgresql"
+            + "+"
             + "psycopg2"
             + "://"
             + POSTGRES_USER
@@ -64,6 +65,7 @@ elif "MYSQL_DATABASE" in environ:
     SQLALCHEMY_DATABASE_URI = make_url(
         str(
             "mysql"
+            + "+"
             + "pymsql"
             + "://"
             + MYSQL_USER
@@ -100,6 +102,7 @@ elif "MARIADB_DATABASE" in environ:
     SQLALCHEMY_DATABASE_URI = make_url(
         str(
             "mariadb"
+            + "+"
             + "pymsql"
             + "://"
             + MARIADB_USER
