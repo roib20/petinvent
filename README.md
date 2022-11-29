@@ -7,13 +7,17 @@ An inventory for your pets! PetInvent allows you to track your pets. Many animal
 
 This project is a full stack web application that uses DevOps best practices - including containerization, micro-services, Infrastructure as Code (IaC), CI/CD pipelines, GitOps, Kubernetes and more.
 
+<br />
+
 ## Installation
 
 A local clean install using Docker and docker compose can be easily achieved using the `clean-install.sh` shell script.
 
 Advanced users can deploy manually using Docker and docker compose, or using Kubernetes and Helm with the charts and shell scripts under the `Kubernetes` folder.
 
-## Technology stack
+<br />
+
+## Technology Stack
 
 ### Full Stack Web Application
 - **Back-end:**  [Python](https://www.python.org/) with [Flask](https://flask.palletsprojects.com/)  
@@ -43,9 +47,11 @@ Advanced users can deploy manually using Docker and docker compose, or using Kub
 - **Application:** [PetInvent](https://ghcr.io/roib20/petinvent)  
 - **Database:** [PostgreSQL HA packaged by Bitnami](https://bitnami.com/stack/postgresql-ha)  
 - **Ingress:** [Ingress NGINX Controller](https://kubernetes.github.io/ingress-nginx/)  
-- **TLS Certificate:** [cert-manager](https://cert-manager.io/) & [Let's Encrypt]()  
+- **TLS Certificate:** [cert-manager](https://cert-manager.io/) & [Let's Encrypt](https://letsencrypt.org/)  
 - **Authoritative DNS:** [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) & [Cloudflare DNS](https://www.cloudflare.com/dns/)  
 - **Domain Registrar**: [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/)  
+
+<br /><br />
 
 [^1]: See container image here: [ghcr.io/roib20/petinvent](https://ghcr.io/roib20/petinvent) 
 [^2]: Used for testing and local deployments (see `Installation` instructions above).  
