@@ -34,8 +34,6 @@ services:
     image: "rapidfort/postgresql:${RAPIDFORT_POSTGRESQL_TAG:-15.1}"
     volumes:
         - "petinvent_db_data:/bitnami/postgresql"
-#    ports:
-#        - "5432:${DATABASE_PORT:-5432}"
     networks:
       - "database_network"
     restart: "unless-stopped"
