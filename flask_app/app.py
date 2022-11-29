@@ -122,7 +122,7 @@ def test_db():
         u = Pet(
             name="Charlie",
             animal="Dog",
-            breed="Labrador Retriever",
+            species="Labrador Retriever",
             birthday="2018-03-13",
         )
         db.session.add(u)
