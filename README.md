@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
 [![CI Status](https://github.com/roib20/petinvent/actions/workflows/ci-pipeline.yml/badge.svg)](https://github.com/roib20/petinvent/actions/workflows/ci-pipeline.yml)
 <br />
-[![Image](https://img.shields.io/badge/image-ghcr.io%2Froib20%2Fpetinvent-9cf)]([https://opensource.org/licenses/MIT](https://github.com/roib20/petinvent/pkgs/container/petinvent))
+[![Image](https://img.shields.io/badge/image-ghcr.io%2Froib20%2Fpetinvent-9cf)](https://github.com/roib20/petinvent/pkgs/container/petinvent)
 
 An inventory for your pets! PetInvent allows you to track your pets. Many animal species and breeds are available to choose from.
 
