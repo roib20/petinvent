@@ -23,7 +23,7 @@ if "POSTGRES_DB" in environ:
     try:
         POSTGRES_PORT = str(environ["POSTGRES_PORT"])
     except KeyError:
-        POSTGRES_PORT = 5432
+        POSTGRES_PORT = str(5432)
 
     # Connect String:
     # dialect+driver://username:password@host:port/dbname[?key=value&key=value...]
