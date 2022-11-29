@@ -51,6 +51,7 @@ Advanced users can deploy manually using Docker and docker compose, or using Kub
 ### Kubernetes Stack [^6]
 - **Application:** [PetInvent](https://ghcr.io/roib20/petinvent)  
 - **Database:** [PostgreSQL HA packaged by Bitnami](https://bitnami.com/stack/postgresql-ha)  
+- **Secret Management:** [Sealed Secrets](https://sealed-secrets.netlify.app/)  
 - **Ingress:** [Ingress NGINX Controller](https://kubernetes.github.io/ingress-nginx/)  
 - **TLS Certificate:** [cert-manager](https://cert-manager.io/) & [Let's Encrypt](https://letsencrypt.org/)  
 - **Authoritative DNS:** [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) & [Cloudflare DNS](https://www.cloudflare.com/dns/)  
