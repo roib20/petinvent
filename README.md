@@ -25,7 +25,7 @@ Advanced users can deploy manually using Docker and docker compose, or using Kub
 
 ### Full Stack Web Application
 - **Back-end:**  [Python](https://www.python.org/) with [Flask](https://flask.palletsprojects.com/)  
-- **Database:** [PostgreSQL](https://www.postgresql.org/) or [SQLite](https://www.sqlite.org/)  
+- **Database:** SQL - [PostgreSQL](https://www.postgresql.org/), [MySQL](https://www.mysql.com/), [MariaDB](https://mariadb.org/) or [SQLite](https://www.sqlite.org/)  
 - **Front-end:** [HTML](https://developer.mozilla.org/en/docs/Web/HTML), [CSS](https://developer.mozilla.org/en/docs/Web/CSS) & [JavaScript](https://developer.mozilla.org/en/docs/Web/JavaScript)  
 - **Front-end Framework:** [Bootstrap v5](https://getbootstrap.com/)  
 - **Scripting**: [Bash](https://www.gnu.org/software/bash/) & [POSIX shell](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html)  

@@ -24,10 +24,10 @@ migrate = Migrate(app, db)
 class Pet(db.Model):
     __tablename__ = "pets"
     id = db.Column("pet_id", db.Integer, primary_key=True)
-    name = db.Column(db.String())
-    animal = db.Column(db.String())
-    species = db.Column(db.String())
-    birthday = db.Column(db.String())
+    name = db.Column(db.String(64))
+    animal = db.Column(db.String(64))
+    species = db.Column(db.String(64))
+    birthday = db.Column(db.Date())
 
 
 def __init__(self, name, animal, species, birthday):

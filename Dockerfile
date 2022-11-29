@@ -34,7 +34,7 @@ RUN mkdir -p /config
 
 # install required Alpine packages
 RUN apk -U upgrade --no-cache && \
-    apk add --no-cache postgresql-libs wget
+    apk add --no-cache mariadb-client mysql-client postgresql-libs curl wget
 
 # Gunicorn entrypoint
 COPY entrypoint.sh entrypoint.sh
