@@ -28,8 +28,8 @@ PASSGEN="head /dev/urandom | tr -dc A-Za-z0-9 | head -c64"
 SECRET_KEY=$( eval "$PASSGEN" )
 POSTGRES_PASSWORD=$( eval "$PASSGEN" )
 
-POSTGRES_USER=user
-DB_HOSTNAME=db
+POSTGRES_USER=root
+DB_HOSTNAME=root
 POSTGRES_DB=pets_db
 POSTGRES_PORT=5432
 
