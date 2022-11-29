@@ -9,6 +9,8 @@ An inventory for your pets! PetInvent allows you to track your pets. Many animal
 
 This project is a full stack web application that uses DevOps best practices - including containerization, micro-services, Infrastructure as Code (IaC), CI/CD pipelines, GitOps, Kubernetes and more.
 
+Live Demo: [petbuddy.party](https://www.petbuddy.party/)
+
 <br />
 
 ## Installation
