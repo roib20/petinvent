@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="card-body">
+    <a type="button" style="display:inline-block; float:right;"
+       class="btn btn-success btn-md text-white" href="{{ url_for('add') }}">Add Pet</a>
     <h4 style="font-weight: bolder; font-size: 200%;">Pet List</h4>
-    <br>
     <table class="table" style="font-size: 150%;">
         <thead>
             <tr>
@@ -35,6 +36,5 @@
             {% endfor %}
         </tbody>
     </table>
-    <a type="button" class="btn btn-success btn-md text-white" href="{{ url_for('add') }}">Create</a>
 </div>
 {% endblock %}
