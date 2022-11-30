@@ -10,6 +10,7 @@ from flask import (
 from view import view
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from datetime import datetime
 
 
 app = Flask(__name__, template_folder="src/templates", static_folder="src/static")
@@ -123,7 +124,7 @@ def test_db():
             name="Charlie",
             animal="Dog",
             species="Labrador Retriever",
-            birthday="2018-03-13",
+            birthday=datetime(2018, 3, 13)
         )
         db.session.add(u)
         db.session.commit()
