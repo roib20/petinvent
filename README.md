@@ -21,6 +21,11 @@ Advanced users can deploy manually using Docker and docker compose, or using Kub
 
 <br />
 
+## Contribution
+Is your favorite animal missing? Found any bugs? You are welcome to open issues, pull requests or forks.
+
+<br />
+
 ## Technology Stack
 
 ### Full Stack Web Application
