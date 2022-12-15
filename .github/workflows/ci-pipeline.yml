@@ -133,7 +133,7 @@ jobs:
   clean:
     needs: [test, publish]
 
-    runs-on: self-hosted # self-hosted ubuntu-22.04 VM (running on Proxmox VE)
+    runs-on: ubuntu-22.04
 
     steps:
 
@@ -147,5 +147,5 @@ jobs:
         untagged_only: true
         owner_type: user
 
-    - name: clean Docker on local system
-      run: docker system prune -af
+#    - name: clean Docker on local system
+#      run: docker system prune -af
