@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
 [![CI Status](https://github.com/roib20/petinvent/actions/workflows/ci-pipeline.yml/badge.svg)](https://github.com/roib20/petinvent/actions/workflows/ci-pipeline.yml)
+[![ShellCheck](https://github.com/roib20/petinvent/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/roib20/petinvent/actions/workflows/shellcheck.yml)
 <br />
 [![Image](https://img.shields.io/badge/image-ghcr.io%2Froib20%2Fpetinvent-orange)](https://github.com/roib20/petinvent/pkgs/container/petinvent)
 
