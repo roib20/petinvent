@@ -22,7 +22,7 @@ helm upgrade --install sealed-secrets-controller bitnami/sealed-secrets --versio
 # sleep "5s"
 
 # Remove previous secret by the same name
-kubectl delete sealedsecrets.bitnami.com ${SECRET_NAME}
+kubectl delete sealedsecrets.bitnami.com "${SECRET_NAME}"
 
 # Generate random passwords
 PASSGEN="head /dev/urandom | tr -dc A-Za-z0-9 | head -c64"
