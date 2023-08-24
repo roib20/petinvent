@@ -22,15 +22,6 @@ db.init_app(app)
 migrate = Migrate(app, db)
 
 
-# class Pet(db.Model):
-#     __tablename__ = "pets"
-#     id = db.Column("pet_id", db.Integer, primary_key=True)
-#     name = db.Column(db.String(64))
-#     animal = db.Column(db.String(64))
-#     species = db.Column(db.String(64))
-#     birthday = db.Column(db.Date())
-
-
 class Task(db.Model):
     __tablename__ = "tasks"
     id = db.Column("task_id", db.Integer, primary_key=True)
@@ -50,7 +41,7 @@ def __init__(self, title, desc, priority, due_date):
 @app.route("/")
 def index():
     db.create_all()
-    return render_template("index.html", task=Task.query.all())
+    return render_template("index.html", tasks=Task.query.all())
 
 
 @app.route("/create/", methods=["GET", "POST"])
@@ -117,7 +108,7 @@ def edit(task_id):
 @app.post("/<int:task_id>/delete/")
 def delete(task_id):
     db.create_all()
-    pet = Task.query.get_or_404(task_id)
+    task = Task.query.get_or_404(task_id)
     db.session.delete(task)
     db.session.commit()
     return redirect(url_for("index"))
@@ -132,7 +123,7 @@ def test_db():
         u = Task(
             title="Charlie",
             desc="Dog",
-            priority="Labrador Retriever",
+            priority="NEW",
             due_date=datetime(2018, 3, 13)
         )
         db.session.add(u)
