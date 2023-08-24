@@ -30,7 +30,7 @@ POSTGRES_PASSWORD=$( eval "$PASSGEN" )
 
 POSTGRES_USER=root
 DB_HOSTNAME=root
-POSTGRES_DB=pets_db
+POSTGRES_DB=tasks_db
 POSTGRES_PORT=5432
 
 # create .env file
