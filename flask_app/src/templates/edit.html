@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="card-body">
-   <h4 style="font-weight: bolder; font-size: 200%;">Edit pet information</h4>
+   <h4 style="font-weight: bolder; font-size: 200%;">Edit task information</h4>
    <hr>
 
    {%- for category, message in get_flashed_messages(with_categories = true) %}
@@ -11,25 +11,23 @@
    {%- endfor %}
    <form action="{{ request.path }}" method="POST" style="font-size: 150%">
 
-      <label for="name" style="font-weight: bold;">Pet name:</label>
-      <input type="text" id="name" class="form-control form-control-custom" name="name" placeholder=""
-         value="{{ pet.name }}" /><br>
+      <label for="title" style="font-weight: bold;">Task name:</label>
+      <input type="text" id="title" class="form-control form-control-custom" name="title" placeholder=""
+         value="{{ task.title }}" /><br>
 
-      <label for="animal" style="font-weight: bold;">Animal:</label>
-      <select name="animal" id="animal" class="form-select form-control-custom">
-         <option value="{{ pet.animal }}" selected="selected">Select animal</option>
+      <label for="desc" style="font-weight: bold;">Description:</label>
+      <input type="text" id="desc" class="form-control form-control-custom" name="desc" placeholder=""
+         value="{{ task.desc }}" /><br>
+
+      <label for="priority" style="font-weight: bold;">Priority:</label>
+      <select name="priority" id="priority" class="form-select form-control-custom">
+         <option value="{{ task.priority }}" selected="selected"></option>
       </select>
       <br>
 
-      <label for="species" style="font-weight: bold;">Breed/Species:</label>
-      <select name="species" id="species" class="form-select form-control-custom">
-         <option value="{{ pet.breed }}" selected="selected">Please select animal first</option>
-      </select>
-      <br>
-
-      <label for="birthday" style="font-weight: bold;">Birthday:</label>
-      <input type="date" name="birthday" id="birthday" class="form-control form-control-custom" style="width: auto;"
-         value="{{ pet.birthday }}" /><br>
+      <label for="due_date" style="font-weight: bold;">Due Date:</label>
+      <input type="date" name="due_date" id="due_date" class="form-control form-control-custom" style="width: auto;"
+         value="{{ task.due_date }}" /><br>
       <hr>
       <a type="button" class="btn btn-danger btn-md text-white" href="{{ url_for('index') }}">Cancel</a>
       <button type="submit" class="btn btn-success btn-md text-white">Update</button>

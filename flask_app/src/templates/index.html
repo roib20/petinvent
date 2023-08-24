@@ -2,30 +2,30 @@
 {% block content %}
 <div class="card-body">
     <a type="button" style="display:inline-block; float:right;"
-       class="btn btn-success btn-md text-white" href="{{ url_for('add') }}">Add Pet</a>
-    <h4 style="font-weight: bolder; font-size: 200%;">Pet List</h4>
+       class="btn btn-success btn-md text-white" href="{{ url_for('create') }}">Create Task</a>
+    <h4 style="font-weight: bolder; font-size: 200%;">Task List</h4>
     <table class="table" style="font-size: 150%;">
         <thead>
             <tr>
-                <th scope="col">Pet name</th>
-                <th scope="col">Animal</th>
-                <th scope="col">Breed</th>
-                <th scope="col">Birthday</th>
+                <th scope="col">Task Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Due Date</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            {% for pet in pets %}
+            {% for task in tasks %}
             <tr>
-                <td>{{ pet.name }}</td>
-                <td>{{ pet.animal }}</td>
-                <td>{{ pet.species }}</td>
-                <td>{{ pet.birthday }}</td>
+                <td>{{ task.title }}</td>
+                <td>{{ task.desc }}</td>
+                <td>{{ task.priority }}</td>
+                <td>{{ task.due_date }}</td>
                 <td>
                     <div class="btn-group" role="group">
                         <a type="button" style="margin: 2px;" class="btn btn-warning btn-md text-black"
-                            href="{{ url_for('edit', pet_id=pet.id) }}">Edit</a>
-                        <form class="form" method="POST" action="{{ url_for('delete', pet_id=pet.id) }}">
+                            href="{{ url_for('edit', task_id=task.id) }}">Edit</a>
+                        <form class="form" method="POST" action="{{ url_for('delete', task_id=task.id) }}">
                             <input type="submit" value="Delete" style="margin: 2px;"
                                 class="btn btn-danger btn-md text-black"
                                 onclick="return confirm('Are you sure you want to delete this entry?')">

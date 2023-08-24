@@ -22,94 +22,103 @@ db.init_app(app)
 migrate = Migrate(app, db)
 
 
-class Pet(db.Model):
-    __tablename__ = "pets"
-    id = db.Column("pet_id", db.Integer, primary_key=True)
-    name = db.Column(db.String(64))
-    animal = db.Column(db.String(64))
-    species = db.Column(db.String(64))
-    birthday = db.Column(db.Date())
+# class Pet(db.Model):
+#     __tablename__ = "pets"
+#     id = db.Column("pet_id", db.Integer, primary_key=True)
+#     name = db.Column(db.String(64))
+#     animal = db.Column(db.String(64))
+#     species = db.Column(db.String(64))
+#     birthday = db.Column(db.Date())
 
 
-def __init__(self, name, animal, species, birthday):
-    self.name = name
-    self.animal = animal
-    self.species = species
-    self.birthday = birthday
+class Task(db.Model):
+    __tablename__ = "tasks"
+    id = db.Column("task_id", db.Integer, primary_key=True)
+    title = db.Column(db.String(64))
+    desc = db.Column(db.String(64))
+    priority = db.Column(db.String(64))
+    due_date = db.Column(db.Date())
+
+
+def __init__(self, title, desc, priority, due_date):
+    self.title = title
+    self.desc = desc
+    self.priority = priority
+    self.due_date = due_date
 
 
 @app.route("/")
 def index():
     db.create_all()
-    return render_template("index.html", pets=Pet.query.all())
+    return render_template("index.html", task=Task.query.all())
 
 
-@app.route("/add/", methods=["GET", "POST"])
-def add():
+@app.route("/create/", methods=["GET", "POST"])
+def create():
     db.create_all()
     if request.method == "POST":
         if (
-            not request.form["name"]
-            or not request.form["animal"]
-            or not request.form["species"]
-            or not request.form["birthday"]
+            not request.form["title"]
+            or not request.form["desc"]
+            or not request.form["priority"]
+            or not request.form["due_date"]
         ):
             flash("Please enter all the fields", "error")
         else:
-            pet = Pet(
-                name=request.form["name"],
-                animal=request.form["animal"],
-                species=request.form["species"],
-                birthday=request.form["birthday"],
+            task = Task(
+                title=request.form["title"],
+                desc=request.form["desc"],
+                priority=request.form["priority"],
+                due_date=request.form["due_date"],
             )
 
-            db.session.add(pet)
+            db.session.add(task)
             db.session.commit()
 
             # flash('Record was successfully added')
             return redirect(url_for("index"))
-    return render_template("add.html")
+    return render_template("create.html")
 
 
-@app.route("/<int:pet_id>/edit/", methods=("GET", "POST"))
-def edit(pet_id):
+@app.route("/<int:task_id>/edit/", methods=("GET", "POST"))
+def edit(task_id):
     db.create_all()
-    pet = Pet.query.get_or_404(pet_id)
+    task = Task.query.get_or_404(task_id)
 
     if request.method == "POST":
 
         if (
-            not request.form["name"]
-            or not request.form["animal"]
-            or not request.form["species"]
-            or not request.form["birthday"]
+            not request.form["title"]
+            or not request.form["desc"]
+            or not request.form["priority"]
+            or not request.form["due_date"]
         ):
             flash("Please enter all the fields", "error")
         else:
-            name = request.form["name"]
-            animal = request.form["animal"]
-            breed = request.form["species"]
-            birthday = request.form["birthday"]
+            title = request.form["title"]
+            desc = request.form["desc"]
+            priority = request.form["priority"]
+            due_date = request.form["due_date"]
 
-            pet.name = name
-            pet.animal = animal
-            pet.species = breed
-            pet.birthday = birthday
+            task.title = title
+            task.desc = desc
+            task.priority = priority
+            task.due_date = due_date
 
-            db.session.add(pet)
+            db.session.add(task)
             db.session.commit()
 
             # flash('Record was successfully updated')
             return redirect(url_for("index"))
 
-    return render_template("edit.html", pet=pet)
+    return render_template("edit.html", task=task)
 
 
-@app.post("/<int:pet_id>/delete/")
-def delete(pet_id):
+@app.post("/<int:task_id>/delete/")
+def delete(task_id):
     db.create_all()
-    pet = Pet.query.get_or_404(pet_id)
-    db.session.delete(pet)
+    pet = Task.query.get_or_404(task_id)
+    db.session.delete(task)
     db.session.commit()
     return redirect(url_for("index"))
 
@@ -118,19 +127,19 @@ def delete(pet_id):
 def test_db():
     db.create_all()
     # db.session.commit()
-    pet = Pet.query.first()
-    if not pet:
-        u = Pet(
-            name="Charlie",
-            animal="Dog",
-            species="Labrador Retriever",
-            birthday=datetime(2018, 3, 13)
+    task = Task.query.first()
+    if not task:
+        u = Task(
+            title="Charlie",
+            desc="Dog",
+            priority="Labrador Retriever",
+            due_date=datetime(2018, 3, 13)
         )
         db.session.add(u)
         db.session.commit()
-    pet = Pet.query.first()
-    return "Pet '{}' is in the database".format(
-        pet.name, pet.animal, pet.species, pet.birthday
+    task = Task.query.first()
+    return "Task '{}' is in the database".format(
+        task.title, task.desc, task.priority, task.due_date
     )
 
 

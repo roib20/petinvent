@@ -1,17 +1,17 @@
-import animalsObject from '/static/animals.js';
+import prioritiesObject from '/static/priorities.js';
 
 window.onload = function () {
-    let animalSelect = document.getElementById("animal");
-    let speciesSelect = document.getElementById("species");
-    for (let x in animalsObject) {
-        animalSelect.options[animalSelect.options.length] = new Option(x, x);
+    let prioritySelect = document.getElementById("priority");
+    let subSelect = document.getElementById("sub");
+    for (let x in prioritiesObject) {
+        prioritySelect.options[prioritySelect.options.length] = new Option(x, x);
     }
-    animalSelect.onchange = function () {
-        //empty Species dropdown
-        speciesSelect.length = 1;
+    prioritySelect.onchange = function () {
+        //empty sub dropdown
+        subSelect.length = 1;
         //display correct values
-        for (let y in animalsObject[this.value]) {
-            speciesSelect.options[speciesSelect.options.length] = new Option(y, y);
+        for (let y in prioritiesObject[this.value]) {
+            subSelect.options[subSelect.options.length] = new Option(y, y);
         }
     }
 }
