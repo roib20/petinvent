@@ -31,7 +31,7 @@ services:
   db:
     hostname: "${DB_HOSTNAME:?err}"
     container_name: "petinvent_db"
-    image: "rapidfort/postgresql:${RAPIDFORT_POSTGRESQL_TAG:-15.1}"
+    image: "rapidfort/postgresql:${RAPIDFORT_POSTGRESQL_TAG:-15.3}"
     volumes:
         - "petinvent_db_data:/bitnami/postgresql"
     networks:
