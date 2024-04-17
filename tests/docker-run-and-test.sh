@@ -12,7 +12,7 @@ docker compose --file "./docker-compose-testing.yml" down \
 if [ "$1" ]; then
   PYTHON_TAG=$( echo "$1" | cut -f2 -d ":" )
 else
-  PYTHON_TAG='3.11-alpine'
+  PYTHON_TAG='3.12-alpine'
 fi
 
 if [ "$2" ]; then

@@ -28,8 +28,8 @@ jobs:
 
     strategy:
       matrix:
-        python: ['python:3.10-alpine', 'python:3.11-alpine']
-        postgres: ['postgres:14-alpine', 'postgres:15-alpine']
+        python: ['python:3.11-alpine', 'python:3.12-alpine']
+        postgres: ['postgres:15-alpine', 'postgres:16-alpine']
 
     steps:
     - uses: actions/checkout@v3
@@ -104,7 +104,7 @@ jobs:
         context: .
         file: ./Dockerfile
         build-args: |
-          PYTHON_TAG=3.11-alpine
+          PYTHON_TAG=3.12-alpine
         platforms: linux/amd64
         pull: false
         push: ${{ github.event_name != 'pull_request' }}
